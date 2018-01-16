@@ -1,4 +1,4 @@
-def ExTabs(text, isfile = False):
+def ex_tabs(text, isfile = False):
 	if isfile:
 		file = open(text, "r")
 		text = file.read()
