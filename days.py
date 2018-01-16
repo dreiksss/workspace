@@ -1,10 +1,13 @@
 
-def isLeap(year):
-	"""isLeap(year) -- return True if year is leap"""
+def is_leap(year):
+	"""is_leap(year) -- return True if year is leap"""
+
 	return year % 400 == 0 or ( year % 4 == 0 and year % 100 != 0 )
 
-def dayOfWeek(year, month, day):
-	"""dayOfWeek(year, month, day) -- return day of week for some date (1 - monday, 7 - sunday)"""
+def day_of_week(year, month, day):
+	"""day_of_week(year, month, day) -- return day of week for some date (1 - monday, 7 - sunday)"""
+
+	#Lets use Zeller's congruence
 	if month == 1:
 		month = 13
 		year -= 1
