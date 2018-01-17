@@ -4,8 +4,5 @@ def fibo_generator(n):
 	a = 1
 	b = 1
 	for i in range(n):
-		print("before yield")
 		yield a
-		print("after yield")
 		a, b = b, a + b
-		print("end code")
