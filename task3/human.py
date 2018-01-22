@@ -63,7 +63,4 @@ people = [me, voronin, bazenov]
 
 with open('C:/Andrey/workspace/people', 'wb') as file:
 	pickle.dump(people, file)
-<<<<<<< HEAD
-=======
-	
->>>>>>> a19cc895a546c14c69c1fc57032bdc83bb51c8b0
+
