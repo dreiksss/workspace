@@ -19,3 +19,8 @@ def int_sums(number):
 			res.append([number-i])
 			res[-1].extend(sublist)
 	return res
+
+if __name__ == '__main__':
+	print(dir())
+	print(int_sums(10))
+	
