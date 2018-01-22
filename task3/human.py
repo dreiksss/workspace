@@ -28,10 +28,10 @@ mobileNumber -- {}
 				   self.house,
 				   self.houseNumber,
 				   self.mobileNumber)
-		print(output)
+		return output
 
-
-me = Human(name='Andrey',
+if __name__ == '__main__':
+	me = Human(name='Andrey',
 		   lastname='Semenov',
 		   birth='20.11.1987',
 		   city = 'Nizniy Novgorod',
@@ -40,7 +40,7 @@ me = Human(name='Andrey',
 		   houseNumber = '620514',
 		   mobileNumber = '9200125290')
 
-voronin = Human(name='Anton',
+	voronin = Human(name='Anton',
 		   lastname='Voronin',
 		   birth='11.09.1987',
 		   city = 'Nizniy Novgorod',
@@ -49,7 +49,7 @@ voronin = Human(name='Anton',
 		   houseNumber = '123456',
 		   mobileNumber = '12345678')
 
-bazenov = Human(name='Pavel',
+	bazenov = Human(name='Pavel',
 		   lastname='Bazenov',
 		   birth='27.04.1988',
 		   city='Nizniy Novgorod',
@@ -59,8 +59,8 @@ bazenov = Human(name='Pavel',
 		   mobileNumber='91247895')
 
 
-people = [me, voronin, bazenov]
+	people = [me, voronin, bazenov]
 
-with open('C:/Andrey/workspace/people', 'wb') as file:
-	pickle.dump(people, file)
+	with open('C:/Andrey/workspace/people', 'wb') as file:
+		pickle.dump(people, file)
 
