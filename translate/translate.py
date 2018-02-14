@@ -53,20 +53,18 @@ def getWords(text):
 	return '\n'.join(wordList)
 
 
-def translateFile(filename):
+def translateAndReplaceFile(filename):
 	text = readFile(filename)
 	forTranslate = getWords(text)
 	#gs = goslate.Goslate()
 	#afterTranslate = gs.translate(forTranslate, 'en')
-	try:
-		blob = TextBlob(forTranslate)
-		afterTranslate = str(blob.translate(from_lang="ja", to='en'))
-	except: #NotTranslated:
-		afterTranslate = forTranslate
+	afterTranslate = translateChunk(forTranslate)
 	for old, new in zip(forTranslate.split('\n'), afterTranslate.split('\n')):
-		new = '<tr>' + new.strip() + '</tr>'
+		new = ' ' + new.strip() + ' '
 		text = text.replace(old, new, 1)
-	return text
+	with open(filename, 'w', encoding='utf8') as file:
+		file.write(text)
+
 
 def makeSrcFile(root):
 	root.strip('\\')
@@ -207,6 +205,10 @@ if __name__ == '__main__':
 	if opt == '-m':
 		srcDir = sys.argv[2]
 		modifyDir(srcDir)
+
+	if opt == '-f':
+		FileName = sys.argv[2]
+		translateAndReplaceFile(FileName)
 	#translateDir(srcDir)
 	#with open('C:/Users/aseme/Documents/GitHub/workspace/translate/output.txt', 'w', encoding='utf8') as file:
 	#	file.write(translateFile(srcDir))
