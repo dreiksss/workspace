@@ -125,7 +125,7 @@ def translateSrcFile(FileName):
 	print('success!!!')
 
 def genNewFolders(root):
-	makeSrcFile(root)
+	#makeSrcFile(root)
 	root.strip('\\')
 	rootWord = root[root.rfind('\\')+1:]
 	srcFile = destDir+'\\'+rootWord+'_src'+'.txt'
@@ -161,6 +161,7 @@ def genNewFolders(root):
 					file.write(text)
 
 def modifyDir(root):
+	#makeSrcFile(root)
 	root.strip('\\')
 	rootWord = root[root.rfind('\\')+1:]
 	srcFile = destDir+'\\'+rootWord+'_src'+'.txt'
